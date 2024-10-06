@@ -64,4 +64,33 @@ public class Payload {
                 "}";
     }
 
+    public static String createBug(String summary, String description) {
+        return "{\n" +
+                "    \"fields\": {\n" +
+                "        \"project\": {\n" +
+                "            \"key\": \"SCRUM\"\n" +
+                "        },\n" +
+                "        \"summary\": \"" + summary + "\",\n" +
+                "        \"description\": {\n" +
+                "            \"content\": [\n" +
+                "                {\n" +
+                "                    \"content\": [\n" +
+                "                        {\n" +
+                "                            \"text\": \"" + description + "\",\n" +
+                "                            \"type\": \"text\"\n" +
+                "                        }\n" +
+                "                    ],\n" +
+                "                    \"type\": \"paragraph\"\n" +
+                "                }\n" +
+                "            ],\n" +
+                "            \"type\": \"doc\",\n" +
+                "            \"version\": 1\n" +
+                "        },\n" +
+                "        \"issuetype\": {\n" +
+                "            \"name\": \"Bug\"\n" +
+                "        }\n" +
+                "    }\n" +
+                "}";
+    }
+
 }
